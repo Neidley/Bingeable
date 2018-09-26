@@ -4,11 +4,25 @@
     <title>Bingeable</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <h1><%= image_tag ("logo.png"), :style => "height: 64px; width: 64px" %> Bingeable</h1>
+      <p>Guide to Your Next TV Obsession</p>
+      <% unless current_page?(root_path) %>
+        <%= link_to "Home", root_path %>
+      <% end %>
+
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:q, "Search TV Shows:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+
+      <%= yield %>
   </body>
 </html>
