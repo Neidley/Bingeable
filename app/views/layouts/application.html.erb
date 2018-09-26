@@ -13,13 +13,13 @@
     <div class="container">
       <h1><%= image_tag ("logo.png"), :style => "height: 64px; width: 64px" %> Bingeable</h1>
       <p>Guide to Your Next TV Obsession</p>
-      <% unless current_page?(root_path) %>
-        <%= link_to "Home", root_path %>
+      <% unless current_page?(root_path) || current_page?(tvshows_index_path) %>
+        <%= link_to "Go Home", root_path %>
       <% end %>
 
-      <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:q, "Search TV Shows:") %>
-        <%= text_field_tag(:q) %>
+      <%= form_tag(tvshows_search_path, method: "get") do %>
+        <%= label_tag(:query, "Search TV Shows:") %>
+        <%= text_field_tag(:query) %>
         <%= submit_tag("Search") %>
       <% end %>
 
