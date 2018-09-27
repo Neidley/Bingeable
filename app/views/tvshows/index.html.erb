@@ -1,6 +1,4 @@
-<h1>Tvshows#index</h1>
-<p>Find me in app/views/tvshows/index.html.erb</p>
-
+</br>
 <div class="container">
   <h2 class="jumbotron">TODAY'S TOP 20 SHOWS</h2>
 
@@ -8,10 +6,7 @@
     <div class="card">
       <%= image_tag("https://image.tmdb.org/t/p/original" + show["backdrop_path"], :class => "img-thumbnail") %>
       <div class="card-body">
-        <h3><%= "#{index + 1}: " + show["original_name"] %></h3>
-        <h5><%= "first air date: " + show["first_air_date"] %></h5>
-        <p><%= show["overview"]%></p>
-      </div>
+        <h3><%= link_to "#{index + 1}: " + show["original_name"], tvshows_show_path(:tv_id => show["id"]) %></h3>
       </br>
     </div>
   <% end %>

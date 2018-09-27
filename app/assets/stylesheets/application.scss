@@ -14,3 +14,35 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.details {
+  font-size: 10px;
+}
+
+.network_logo {
+  height: 25px;
+}
+
+a {
+  color: #4C5550;
+}
+
+a:hover {
+  color: #337ab7;
+  text-decoration: none; /* no underline */
+}
+
+.jumbotron {
+  background-color: light-grey;
+  text-align: center;
+}
+
+.nav.navbar {
+  text-align: center;
+}
+
+.logo {
+  height: 64px;
+  width: 64px;
+  display: inline-block;
+}

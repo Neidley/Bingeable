@@ -1,2 +1,20 @@
-<h1>Tvshows#show</h1>
-<p>Find me in app/views/tvshows/show.html.erb</p>
+
+<div class="card">
+  <% unless @show["poster_path"].nil? %>
+    <%=image_tag "https://image.tmdb.org/t/p/original#{@show["poster_path"]}", :class => "img-thumbnail" %>
+  <% end %>
+  <div class="card-body">
+    <h3><%= @show["original_name"] %></h3>
+    <p>Network: <%=image_tag "https://image.tmdb.org/t/p/original#{@show["networks"][0]["logo_path"]}", :class => "network_logo" %>
+    <p>Creator: <%= @show["created_by"][0]["name"] %></p>
+    <p>Seasons: <%= @show["number_of_seasons"].to_s %></p>
+    <p>Episodes: <%= @show["number_of_episodes"].to_s %></p>
+    <p>Genre: <%= @show["genres"][0]["name"] %></p>
+    <p>Type: <%= @show["type"] %></p>
+    <p>Country of Origin: <%= @show["origin_country"][0] %></p>
+    <p>First Air Date: <%= @show["first_air_date"] %></p>
+    <p>Most Recent Air Date: <%= @show["last_air_date"] %></p>
+    <p>Overview: <%= @show["overview"] %></p>
+  </div>
+  </br>
+</div>

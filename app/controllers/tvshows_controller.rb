@@ -7,7 +7,8 @@ class TvshowsController < ApplicationController
   end
 
   def show
-    @tvshow = @top_shows.find(params[:id])
+    response = HTTParty.get("https://api.themoviedb.org/3/tv/#{params[:tv_id]}?api_key=#{ENV["SECRET_API_KEY"]}")
+    @show = response
   end
 
   def search

@@ -1,5 +1,3 @@
-<h1>Tvshows#search</h1>
-<p>Find me in app/views/tvshows/search.html.erb</p>
 
 <div class="container">
   <h2 class="jumbotron">Search Results</h2>
@@ -18,7 +16,7 @@
           <%= image_tag("https://image.tmdb.org/t/p/original" + show["backdrop_path"], :class => "img-thumbnail") %>
         <% end %>
         <div class="card-body">
-          <h3><%= "#{index + 1}: " + show["original_name"] %></h3>
+          <h3><%= link_to "#{index + 1}: " + show["original_name"], tvshows_show_path(:tv_id => show["id"]) %></h3>
           <h5><%= "first air date: " + show["first_air_date"] %></h5>
           <p><%= show["overview"]%></p>
         </div>
