@@ -11,7 +11,7 @@
     <p>Country of Origin: <%= @show["origin_country"] %></p>
     <p>First Air Date: <%= @show["first_air_date"] %></p>
     <p>Most Recent Air Date: <%= @show["last_air_date"] %></p>
-    <h5>Overview: <%= @show["overview"] %></h5>
+    <i id="overview">Overview: <br><%= @show["overview"] %></i>
     <h4><%= link_to "Check out JustWatch.com for currently available streaming options", "#{@show["justwatch_url"]}", :id => "just_watch" %></h4>
   </div>
 </div>

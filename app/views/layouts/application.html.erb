@@ -22,14 +22,14 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-12" id="logo">
-              <%= link_to image_tag('logo2.png'), root_path %>
+            <div class="col-xlg-12" id="logo">
+              <%= link_to image_tag('logo2.png', :class => "logo"), root_path %>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-12">
               <%= form_tag(tvshows_search_path, method: "get") do %>
-                <%= text_field_tag(:query, nil, placeholder: "Search TV Shows", id: "ip-input") %>
+                <%= text_field_tag(:query, nil, placeholder: "Search TV Shows", :autocomplete => :off, id: "ip-input") %>
                 <!-- <%= submit_tag("Search", :class=>"btn btn-primary") %> -->
               <% end %>
             </div>

@@ -19,13 +19,16 @@
   padding-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-color: black;
+  width: 250px;
+  display: inline-block;
 }
 
 a#title_name {
   text-decoration: none;
   font-size: 30px;
-  color: #148BB1;
+  color: black;
 
+  border-bottom-color: #1486AC;
   border-bottom-style: solid;
   border-bottom-width: thick;
 
@@ -36,9 +39,13 @@ a#title_name {
   border-radius: 50%;
 
   padding-bottom: 19px;
-  padding-top: 25px;
-  padding-left: 33px;
+  padding-top: 19px;
+  padding-left: 20px;
   padding-right: 20px;
+}
+
+a#title_name:active {
+  font-size: 28px;
 }
 
 #motto {
@@ -48,7 +55,7 @@ a#title_name {
   border-bottom-style: solid;
 }
 
-a#title_name:active {
+a#title_name:hover {
   text-decoration: none;
   color: #1496BC;
   border-bottom-color: #FFD177;
@@ -73,12 +80,15 @@ p {
   text-align: center;
 }
 
+strong {
+  font-family: 'Roboto Slab', serif;
+}
+
 a {
   font-family: 'Roboto Slab', serif;
 }
 
 a:hover {
-  color: #1486AC;
   text-decoration: none;
 
 }
@@ -92,6 +102,10 @@ h4 {
   text-align: center;
 }
 
+i#overview {
+  text-align: center;
+}
+
 a#just_watch {
   border-bottom-style: solid;
   border-bottom-color: #1486AC;
@@ -101,14 +115,24 @@ a#just_watch {
 .jumbotron {
   text-align: center;
   font-family: 'Roboto Slab', serif;
+  border-style: dotted;
+  border-color: #FFD177;
 }
 
 #ip-input {
   font-family: 'Roboto Slab', serif;
   padding-top: 0px;
+  color: black;
+  border-color: black;
+  border-style: double;
   padding-bottom: 0px;
   margin-top: 25px;
   text-align: center;
+}
+
+#ip-input:hover {
+  border-color: #FFD177;
+  color: #1486AC;
 }
 
 .nav.navbar {

@@ -18,19 +18,23 @@ class TvshowsController < ApplicationController
     @show = {}
     response = HTTParty.get("https://api.themoviedb.org/3/tv/#{params[:tv_id]}?api_key=#{ENV["SECRET_API_KEY"]}")
 
-    @show["poster_path_url"] = "https://image.tmdb.org/t/p/original#{response["poster_path"]}"
-    @show["original_name"] = response["original_name"] || "N/A"
-    @show["network_tag_url"] = "https://image.tmdb.org/t/p/original#{response["networks"][0]["logo_path"]}" || "N/A"
-    @show["created_by"] = response["created_by"][0]["name"] || "N/A"
-    @show["number_of_seasons"] = response["number_of_seasons"].to_s || "N/A"
-    @show["number_of_episodes"] = response["number_of_episodes"].to_s || "N/A"
-    @show["genres"] = response["genres"][0]["name"] || "N/A"
-    @show["type"] = response["type"] || "N/A"
-    @show["origin_country"] = response["origin_country"][0] || "N/A"
-    @show["first_air_date"] = self.fix_date(response["first_air_date"]) || "N/A"
-    @show["last_air_date"] = self.fix_date(response["last_air_date"]) || "N/A"
-    @show["overview"] = response["overview"] || "N/A"
-    @show["justwatch_url"] = "https://www.justwatch.com/us/search?q=#{@show["original_name"]}" || "N/A"
+    if response["poster_path"].nil?
+      @show["poster_path_url"] = "error_image.png"
+    else
+      @show["poster_path_url"] = "https://image.tmdb.org/t/p/original#{response["poster_path"]}"
+    end
+    @show["original_name"] = response["original_name"]
+    @show["network_tag_url"] = "https://image.tmdb.org/t/p/original#{response["networks"][0]["logo_path"]}" unless response["networks"].empty?
+    @show["created_by"] = response["created_by"][0]["name"] unless response["created_by"].empty?
+    @show["number_of_seasons"] = response["number_of_seasons"].to_s unless response["number_of_seasons"].nil?
+    @show["number_of_episodes"] = response["number_of_episodes"].to_s unless response["number_of_episodes"].nil?
+    @show["genres"] = response["genres"][0]["name"] unless response["genres"].empty?
+    @show["type"] = response["type"] unless response["type"].nil?
+    @show["origin_country"] = response["origin_country"][0] unless response["origin_country"].empty?
+    @show["first_air_date"] = self.fix_date(response["first_air_date"]) unless response["first_air_date"].nil?
+    @show["last_air_date"] = self.fix_date(response["last_air_date"]) unless response["last_air_date"].nil?
+    @show["overview"] = response["overview"] unless response["overview"].nil?
+    @show["justwatch_url"] = "https://www.justwatch.com/us/search?q=#{@show["original_name"]}"
   end
 
   def search
