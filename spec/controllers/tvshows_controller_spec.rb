@@ -7,6 +7,8 @@ RSpec.describe TvshowsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    describe "it displays top tv shows according to preset input number"
   end
 
   describe "GET #show" do

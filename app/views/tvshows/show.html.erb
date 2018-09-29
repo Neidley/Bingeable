@@ -1,20 +1,18 @@
 
 <div class="card">
-  <% unless @show["poster_path"].nil? %>
-    <%=image_tag "https://image.tmdb.org/t/p/original#{@show["poster_path"]}", :class => "img-thumbnail" %>
-  <% end %>
-  <div class="card-body">
-    <h3><%= @show["original_name"] %></h3>
-    <p>Network: <%=image_tag "https://image.tmdb.org/t/p/original#{@show["networks"][0]["logo_path"]}", :class => "network_logo" %>
-    <p>Creator: <%= @show["created_by"][0]["name"] %></p>
+  <%=image_tag "#{@show["poster_path_url"]}", :class => "img-thumbnail" %>
+    <h3 class="show_name"><%= @show["original_name"] %></h3>
+    <p>Network: <%= image_tag("#{@show["network_tag_url"]}", :class => "network_logo") %>
+    <p>Creator: <%= @show["created_by"] %></p>
     <p>Seasons: <%= @show["number_of_seasons"].to_s %></p>
     <p>Episodes: <%= @show["number_of_episodes"].to_s %></p>
-    <p>Genre: <%= @show["genres"][0]["name"] %></p>
+    <p>Genre: <%= @show["genres"] %></p>
     <p>Type: <%= @show["type"] %></p>
-    <p>Country of Origin: <%= @show["origin_country"][0] %></p>
+    <p>Country of Origin: <%= @show["origin_country"] %></p>
     <p>First Air Date: <%= @show["first_air_date"] %></p>
     <p>Most Recent Air Date: <%= @show["last_air_date"] %></p>
-    <p>Overview: <%= @show["overview"] %></p>
+    <h5>Overview: <%= @show["overview"] %></h5>
+    <h4><%= link_to "Check out JustWatch.com for currently available streaming options", "#{@show["justwatch_url"]}", :id => "just_watch" %></h4>
   </div>
-  </br>
 </div>
+</br>

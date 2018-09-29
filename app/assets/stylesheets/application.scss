@@ -15,25 +15,99 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.details {
-  font-size: 10px;
+#logo {
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+
+a#title_name {
+  text-decoration: none;
+  font-size: 30px;
+  color: #148BB1;
+
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+
+  border-top-color: #1486AC;
+  border-top-style: solid;
+  border-top-width: thick;
+
+  border-radius: 50%;
+
+  padding-bottom: 19px;
+  padding-top: 25px;
+  padding-left: 33px;
+  padding-right: 20px;
+}
+
+#motto {
+  padding-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom-style: solid;
+}
+
+a#title_name:active {
+  text-decoration: none;
+  color: #1496BC;
+  border-bottom-color: #FFD177;
+  border-top-color: #FFD177;
+}
+
+img.error-image {
+  height: 128px;
+  width: 128px;
+}
+
+div.card {
+  text-align: center;
 }
 
 .network_logo {
   height: 25px;
 }
 
+p {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+
 a {
-  color: #4C5550;
+  font-family: 'Roboto Slab', serif;
 }
 
 a:hover {
-  color: #337ab7;
-  text-decoration: none; /* no underline */
+  color: #1486AC;
+  text-decoration: none;
+
+}
+
+h2.jumbotron {
+  background-color: black;
+  color: white;
+}
+
+h4 {
+  text-align: center;
+}
+
+a#just_watch {
+  border-bottom-style: solid;
+  border-bottom-color: #1486AC;
+  border-radius: 15%;
 }
 
 .jumbotron {
-  background-color: light-grey;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+#ip-input {
+  font-family: 'Roboto Slab', serif;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 25px;
   text-align: center;
 }
 
@@ -41,8 +115,6 @@ a:hover {
   text-align: center;
 }
 
-.logo {
-  height: 64px;
-  width: 64px;
-  display: inline-block;
+.card-body.show_name {
+  text-align: center;
 }

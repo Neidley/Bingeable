@@ -5,25 +5,37 @@
     <%= csrf_meta_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  </br>
+    </br>
     <div class="container">
       <div class="nav navbar">
-        <h1 id="title">
-          <%= link_to image_tag("logo.png"), root_path %>
-          <%= link_to "Bingeable", root_path %>
-        </h1>
-        <p>The Guide to Your Next TV Obsession</p>
-
-        <%= form_tag(tvshows_search_path, method: "get") do %>
-          <%= text_field_tag(:query, nil, placeholder: "Search TV Shows") %>
-          <!-- <%= submit_tag("Search", :class=>"btn btn-primary") %> -->
-        <% end %>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= link_to "Bingeable.io", root_path, :id => "title_name" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12" id="logo">
+              <%= link_to image_tag('logo2.png'), root_path %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <%= form_tag(tvshows_search_path, method: "get") do %>
+                <%= text_field_tag(:query, nil, placeholder: "Search TV Shows", id: "ip-input") %>
+                <!-- <%= submit_tag("Search", :class=>"btn btn-primary") %> -->
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <%= yield %>
+    <%= yield %>
   </body>
 </html>

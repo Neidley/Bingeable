@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h2 class="jumbotron">Search Results</h2>
+  <h2 class="jumbotron bg-success">Search Results</h2>
 
   <% if @shows.nil? || @shows.empty? %>
 
@@ -12,13 +12,13 @@
 
     <% @shows.each_with_index do |show, index| %>
       <div class="card">
-        <% unless show["backdrop_path"].nil? %>
+        <% if show["backdrop_path"].nil? %>
+          <%= image_tag("error_image.png", :class => "error-image") %>
+        <% else %>
           <%= image_tag("https://image.tmdb.org/t/p/original" + show["backdrop_path"], :class => "img-thumbnail") %>
         <% end %>
-        <div class="card-body">
+        <div class="card-body show_name">
           <h3><%= link_to "#{index + 1}: " + show["original_name"], tvshows_show_path(:tv_id => show["id"]) %></h3>
-          <h5><%= "first air date: " + show["first_air_date"] %></h5>
-          <p><%= show["overview"]%></p>
         </div>
         </br>
       </div>
