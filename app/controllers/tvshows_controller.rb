@@ -1,9 +1,20 @@
 class TvshowsController < ApplicationController
   include HTTParty
+  before_action :populate_showlist, only: [:index]
+
+  def populate_showlist
+    @top_shows = []
+
+    5.times do |t|
+      response = HTTParty.get("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV["SECRET_API_KEY"]}&language=en-US&sort_by=popularity.desc&page=#{t + 1}&timezone=America%2FNew_York&include_null_first_air_dates=false")
+      response["results"].each do |show|
+        @top_shows.push(show)
+      end
+    end
+  end
 
 
   def index
-    @top_shows = []
 
     @random_message = [
       "...tv is beter with tacos. and we're fresh out of tacos.",
@@ -20,13 +31,6 @@ class TvshowsController < ApplicationController
       "...because watching people cook never gets old.",
       "...you simply must watch [insert show!]"
     ]
-
-    5.times do |t|
-      response = HTTParty.get("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV["SECRET_API_KEY"]}&language=en-US&sort_by=popularity.desc&page=#{t + 1}&timezone=America%2FNew_York&include_null_first_air_dates=false")
-      response["results"].each do |show|
-        @top_shows.push(show)
-      end
-    end
 
   end
 
@@ -68,5 +72,7 @@ class TvshowsController < ApplicationController
     result[2] = temp
     result.join("-")
   end
+
+
 
 end
