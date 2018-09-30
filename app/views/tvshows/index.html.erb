@@ -1,5 +1,8 @@
 <div class="container">
-  <h2 class="jumbotron">TODAY'S TOP 100 SHOWS</h2>
+  <h2 class="jumbotron">Top 100 Shows
+    <p>(fresh daily)</p>
+    <p><%= "#{@random_message.sample}" %></p>
+  </h2>
 
   <% @top_shows.each_with_index do |show, index| %>
     <div class="card">

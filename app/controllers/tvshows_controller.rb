@@ -5,6 +5,22 @@ class TvshowsController < ApplicationController
   def index
     @top_shows = []
 
+    @random_message = [
+      "...tv is beter with tacos. and we're fresh out of tacos.",
+      "...or you could watch 'The Office' for the millienth time?",
+      "...spoiler-free since '93.",
+      "...we're gonna need a bigger screen.",
+      "...couch, blanket, bff, check. check. check.",
+      "...number 100 will shock you!...jk couldn't resist",
+      "...can we order a pizza?",
+      "...I saved girl scout cookies for this exact moment.",
+      "...not your common tv guide. now battery operated!",
+      "...recommended by 9 out of 10 couch potatoes!",
+      "...Smell-O-Vision coming soon.",
+      "...because watching people cook never gets old.",
+      "...you simply must watch [insert show!]"
+    ]
+
     5.times do |t|
       response = HTTParty.get("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV["SECRET_API_KEY"]}&language=en-US&sort_by=popularity.desc&page=#{t + 1}&timezone=America%2FNew_York&include_null_first_air_dates=false")
       response["results"].each do |show|

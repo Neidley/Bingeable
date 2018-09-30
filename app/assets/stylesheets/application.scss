@@ -15,7 +15,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-#logo {
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+
+div.col-xsm-12#logo {
   padding-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-color: black;
@@ -23,29 +28,39 @@
   display: inline-block;
 }
 
+img.logo {
+  height: 32px;
+  width: 32px;
+}
+
 a#title_name {
   text-decoration: none;
-  font-size: 30px;
-  color: black;
-
+  font-size: 19px;
   border-bottom-color: #1486AC;
   border-bottom-style: solid;
-  border-bottom-width: thick;
-
+  border-bottom-width: thin;
   border-top-color: #1486AC;
   border-top-style: solid;
   border-top-width: thick;
-
+  border-right-color: #1486AC;
+  border-right-style: solid;
+  border-right-width: thick;
   border-radius: 50%;
-
-  padding-bottom: 19px;
-  padding-top: 19px;
-  padding-left: 20px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-left: 26px;
   padding-right: 20px;
 }
 
 a#title_name:active {
-  font-size: 28px;
+  font-size: 20px;
+}
+
+a#title_name:hover {
+  text-decoration: none;
+  border-bottom-color: #FFD177;
+  border-top-color: #FFD177;
+  border-right-color: #FFD177;
 }
 
 #motto {
@@ -53,13 +68,6 @@ a#title_name:active {
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom-style: solid;
-}
-
-a#title_name:hover {
-  text-decoration: none;
-  color: #1496BC;
-  border-bottom-color: #FFD177;
-  border-top-color: #FFD177;
 }
 
 img.error-image {
@@ -76,26 +84,12 @@ div.card {
 }
 
 p {
-  font-family: 'Roboto Slab', serif;
   text-align: center;
-}
-
-strong {
-  font-family: 'Roboto Slab', serif;
-}
-
-a {
-  font-family: 'Roboto Slab', serif;
 }
 
 a:hover {
   text-decoration: none;
 
-}
-
-h2.jumbotron {
-  background-color: black;
-  color: white;
 }
 
 h4 {
@@ -107,23 +101,20 @@ i#overview {
 }
 
 a#just_watch {
-  border-bottom-style: solid;
   border-bottom-color: #1486AC;
   border-radius: 15%;
 }
 
-.jumbotron {
+h2.jumbotron {
   text-align: center;
-  font-family: 'Roboto Slab', serif;
-  border-style: dotted;
-  border-color: #FFD177;
+  background-color: black;
+  color: white;
 }
 
 #ip-input {
-  font-family: 'Roboto Slab', serif;
   padding-top: 0px;
-  color: black;
-  border-color: black;
+  color: #1486AC;
+  border-color: #1486AC;
   border-style: double;
   padding-bottom: 0px;
   margin-top: 25px;
@@ -132,7 +123,7 @@ a#just_watch {
 
 #ip-input:hover {
   border-color: #FFD177;
-  color: #1486AC;
+  color: black;
 }
 
 .nav.navbar {
