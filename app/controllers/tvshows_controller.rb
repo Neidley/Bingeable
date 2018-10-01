@@ -54,7 +54,7 @@ class TvshowsController < ApplicationController
     @show["first_air_date"] = self.fix_date(response["first_air_date"]) unless response["first_air_date"].nil?
     @show["last_air_date"] = self.fix_date(response["last_air_date"]) unless response["last_air_date"].nil?
     @show["overview"] = response["overview"] unless response["overview"].nil?
-    @show["justwatch_url"] = "https://www.justwatch.com/us/search?q=#{@show["original_name"]}"
+    @show["justwatch_url"] = "https://www.justwatch.com/us/search?q=#{response['name']}"
   end
 
   def search
