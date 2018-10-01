@@ -22,7 +22,8 @@ Built with love using Ruby on Rails; check it out [here](http://www.bingeable.io
 * [Problem](#problem)
 * [Solution](#solution)
 * [Trade-Offs](#trade-offs)
-* [Installation Instructions](#installation)
+* [Installation](#installation)
+* [Testing](#Testing)
 * [Contacts](#contacts)
 
 ## Technologies Used
@@ -59,12 +60,12 @@ Built with love using Ruby on Rails; check it out [here](http://www.bingeable.io
 
 ## Solution
 
-Ruby on Rails was my first choice to get this app built quickly and reliably because the Rails framework relies on [convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration). I love how Rails will show you errors in the browser. You can quickly create views that communicate intuitively with corresponding controller files and the actions defined within.
+Ruby on Rails was my first choice to get this app built quickly and reliably because the Rails framework relies on [convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration). I also love how Rails will show you errors in the browser. You can quickly create views that communicate intuitively with corresponding controller files and the actions defined within.
 
 Handling the API was easy using the [HTTParty gem](https://github.com/jnunemaker/httparty):
 
-* add `gem 'httparty'`,
-* in the terminal, within the project directory, run `$ bundle install`,
+* add `gem 'httparty'` to the Gemfile,
+* after adding any gem, in the terminal, within the project directory, run `$ bundle install`,
 * `include HTTParty` at the top of the controller file just under the class declaration,
 * then, `response = HTTParty.get(url with api environment variable)` to retrieve a JSON object saved to `response` you then can iterate over, reference, and get data you need to display.
 
@@ -104,11 +105,11 @@ Here's additional resources I found very useful while building this project:
 
 ## Trade-Offs
 
-I had one week to complete this project, so naturally there are certain features, refractoring, and tests that I'm excited to implement in the future,
+I had one week to complete this project, so naturally there are certain features, refactoring, and tests that I'm excited to implement in the future,
 
 Specifically:
 
-* Refractor HTTParty calls to be outside the index, show, and search methods and live within a private method
+* Refactor HTTParty calls to be outside the index, show, and search methods and live within a private method
 
 * No Models are not used in this Rails project. One use would be if there was a User model, users could store a "Wishlist" of shows they discover and keep track of what they've watched, enjoyed, and rate those shows accordingly
 
@@ -116,13 +117,13 @@ Additional Movie DB API calls I would like to add in the future:
 
 * top 100 movies, movie search
 
-* attatch reviews to movies/shows
+* attach reviews to movies/shows
 
 * actor/actress bio displays, actor search
 
 * Autocomplete functionality within search
 
-## Installation Instructions
+## Installation
 
 * [Install Rails 5](http://installrails.com/) if you do not already have it installed on your system.
 
@@ -145,6 +146,21 @@ In your terminal:
 * yay! you should be running the app locally on your system : )
 
 * Press `CTRL + C` in your terminal to stop the server
+
+## Testing
+
+* in your terminal, make sure you are within the project directory. if you run `$ ls` + ENTER you should see
+
+ `
+ bingeable yourname$ ls`
+
+ `Gemfile		Rakefile	config		lib		public		 
+ tmp
+ Gemfile.lock	app		config.ru	log		spec		 
+ vendor
+ README.md	bin		db		package.json	test`
+
+* `rspec spec/controllers/tvshows_controller_spec.rb` to run tests
 
 ## Contacts
 
