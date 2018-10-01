@@ -23,7 +23,7 @@ gem 'bootstrap-sass'
 # If you're using Rails 5.1+, add the jquery-rails gem to your Gemfile
 gem 'jquery-rails'
 
-# HTTParty for easier access of Movie Database API data
+# HTTParty for easy access of Movie Database API data
 gem 'httparty'
 
 gem 'figaro'
