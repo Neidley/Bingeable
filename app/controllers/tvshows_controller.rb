@@ -43,7 +43,7 @@ class TvshowsController < ApplicationController
     else
       @show["poster_path_url"] = "https://image.tmdb.org/t/p/original#{response["poster_path"]}"
     end
-    @show["original_name"] = response["original_name"]
+    @show["name"] = response["name"]
     @show["network_tag_url"] = "https://image.tmdb.org/t/p/original#{response["networks"][0]["logo_path"]}" unless response["networks"].empty?
     @show["created_by"] = response["created_by"][0]["name"] unless response["created_by"].empty?
     @show["number_of_seasons"] = response["number_of_seasons"].to_s unless response["number_of_seasons"].nil?

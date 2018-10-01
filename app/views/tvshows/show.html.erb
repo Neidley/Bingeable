@@ -1,7 +1,7 @@
 
 <div class="card">
   <%=image_tag "#{@show["poster_path_url"]}", :class => "img-thumbnail" %>
-    <h3 class="show_name"><%= @show["original_name"] %></h3>
+    <h3 class="show_name"><%= @show["name"] %></h3>
     <p>Network: <%= image_tag("#{@show["network_tag_url"]}", :class => "network_logo") %>
     <p>Creator: <%= @show["created_by"] %></p>
     <p>Seasons: <%= @show["number_of_seasons"].to_s %></p>
