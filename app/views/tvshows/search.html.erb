@@ -12,14 +12,14 @@
 
     <% @shows.each_with_index do |show, index| %>
       <div class="card">
+        <div class="card-body show_name">
+          <h3><%= link_to "#{index + 1}: " + show["name"], tvshows_show_path(:tv_id => show["id"]) %></h3>
+        </div>
         <% if show["backdrop_path"].nil? %>
           <%= image_tag("error_image.png", :class => "error-image") %>
         <% else %>
           <%= image_tag("https://image.tmdb.org/t/p/original" + show["backdrop_path"], :class => "img-thumbnail") %>
         <% end %>
-        <div class="card-body show_name">
-          <h3><%= link_to "#{index + 1}: " + show["name"], tvshows_show_path(:tv_id => show["id"]) %></h3>
-        </div>
         </br>
       </div>
     <% end %>
